@@ -606,13 +606,13 @@ Always use Swift's native types and expressions when available. Swift offers bri
 **Preferred**:
 ```swift
 let width = 120.0                                    // Double
-let widthString = "\(width)"                         // String
+let widthString = String(width)                      // String
 ```
 
 **Less Preferred**:
 ```swift
 let width = 120.0                                    // Double
-let widthString = (width as NSNumber).stringValue    // String
+let widthString = "\(width)"                         // String
 ```
 
 **Not Preferred**:
