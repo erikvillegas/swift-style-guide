@@ -852,6 +852,13 @@ resource.request().onComplete { [weak self] response in
 }
 ```
 
+However if there is only a single line of code in the closure, it's OK to omit the strong self and use optional chaining directly:
+```swift
+resource.request().onComplete { [weak self] response in
+  self?.delegate?.operationComplete()
+}
+```
+
 ## Access Control
 
 Full access control annotation in tutorials can distract from the main topic and is not required. Using `private` and `fileprivate` appropriately, however, adds clarity and promotes encapsulation. Prefer `private` to `fileprivate`; use `fileprivate` only when the compiler insists.
