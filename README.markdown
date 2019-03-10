@@ -1119,7 +1119,7 @@ let message = "You cannot charge the flux " +
 
 ## No Emoji
 
-Do not use emoji in your projects. For those readers who actually type in their code, it's an unnecessary source of friction. While it may be cute, it doesn't add to the learning and it interrupts the coding flow for these readers.
+Do not use emoji in code as it's an unnecessary source of friction. Occasional use of emojis in comments is OK to help get a point across.
 
 ## Organization and Bundle Identifier
 
