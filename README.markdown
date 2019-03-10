@@ -852,7 +852,7 @@ resource.request().onComplete { [weak self] response in
 }
 ```
 
-However if there is only a single line of code in the closure, it's OK to omit the strong self and use optional chaining directly:
+However, if there is only a single line of code in the closure, it's OK to omit the strong self and use optional chaining directly:
 ```swift
 resource.request().onComplete { [weak self] response in
   self?.delegate?.operationComplete()
@@ -883,6 +883,25 @@ fileprivate let message = "Great Scott!"
 class TimeMachine {  
   lazy dynamic private var fluxCapacitor = FluxCapacitor()
 }
+```
+
+However, avoid intermixing public and private properties together as it makes the code difficult to read:
+
+**Preferred**:
+```swift
+private let message = "Great Scott!"
+private let location = "CA"
+
+let name = "John"
+let age = 42
+```
+
+**Not Preferred**:
+```swift
+private let message = "Great Scott!"
+let name = "John"
+private let location = "CA"
+let age = 42
 ```
 
 ## Control Flow
