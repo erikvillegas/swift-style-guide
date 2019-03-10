@@ -307,6 +307,31 @@ if user.isHappy
 }
 ```
 
+* Group relevant code together with no spacing between lines. This makes the code easier to scan through when looking for a particular block of code. For example:
+
+**Preferred**:
+```swift
+let view = UIView()
+view.backgroundColor = UIColor.white
+view.tag = 0
+
+let label = UILabel()
+label.text = "Hello, World"
+```
+
+**Not Preferred**:
+```swift
+let view = UIView()
+
+view.backgroundColor = UIColor.white
+
+view.tag = 0
+
+let label = UILabel()
+
+label.text = "Hello, World"
+```
+
 * There should be exactly one blank line between methods to aid in visual clarity and organization. Whitespace within methods should separate functionality, but having too many sections in a method often means you should refactor into several methods.
 
 * There should be no blank lines after an opening brace or before a closing brace.
