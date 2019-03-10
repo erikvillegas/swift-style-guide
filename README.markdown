@@ -429,9 +429,29 @@ The example above demonstrates the following style guidelines:
 
 ### Use of Self
 
-For conciseness, avoid using `self` since Swift does not require it to access an object's properties or invoke its methods.
+For readability, opt to use `self` instead of omitting it, even though it is not required by Swift. Adding this qualifier makes it clear whether a local or class variable is being used, especially during code reviews when you don't always have the full context of the class properties in mind.
 
-Use self only when required by the compiler (in `@escaping` closures, or in initializers to disambiguate properties from arguments). In other words, if it compiles without `self` then omit it.
+**Preferred**:
+```swift
+var userName: String
+
+func textFieldUpdated() {
+  if let name = textField.text {
+    userName = name
+  }
+}
+```
+
+**Not Preferred**:
+```swift
+var userName: String
+
+func textFieldUpdated() {
+  if let name = textField.text {
+    self.userName = name
+  }
+}
+```
 
 
 ### Computed Properties
